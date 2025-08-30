@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MainContent } from "./MainContent";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +14,30 @@ export const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex gap-6 text-sm font-medium">
-                        <li className="cursor-pointer hover:text-blue-600 transition">Join as Guest</li>
-                        <li className="cursor-pointer hover:text-blue-600 transition">Register</li>
-                        <li className="cursor-pointer hover:text-blue-600 transition">Login</li>
+                        <li>
+                            <Link
+                                to="/guest"
+                                className="hover:text-blue-600 transition"
+                            >
+                                Join as Guest
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/register"
+                                className="hover:text-blue-600 transition"
+                            >
+                                Register
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/login"
+                                className="hover:text-blue-600 transition"
+                            >
+                                Login
+                            </Link>
+                        </li>
                     </ul>
 
                     {/* Mobile Hamburger */}
