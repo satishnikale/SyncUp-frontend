@@ -25,7 +25,7 @@ export const Carousel = () => {
                     {/* Text */}
                     <div className="w-full text-center lg:text-left">
                         <h1 className="w-full text-lg sm:text-xl md:text-3xl lg:text-4xl 
-                   font-medium leading-relaxed lg:leading-snug">
+                   font-medium leading-relaxed lg:leading-tight">
                             SyncUp has upgraded our <br className="hidden sm:block" />
                             remote meetings. High-quality <br className="hidden sm:block" />
                             video, screen sharing, and <br className="hidden sm:block" />
