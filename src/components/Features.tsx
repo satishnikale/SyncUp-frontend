@@ -49,7 +49,7 @@ export const WhyChooseClearLink = () => {
     <MainContent>
       <section className="font-inter w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 md:py-12 lg:py-16">
         {/* Main Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Features List */}
           <div className="flex flex-col gap-12">
             <div className="max-w-2xl my-10">
@@ -74,7 +74,7 @@ export const WhyChooseClearLink = () => {
             <img
               src={peopleCollage}
               alt="People collage"
-              className="w-full h-auto object-cover rounded-lg shadow-md"
+              className="w-full max-w-lg sm:max-w-xl lg:max-w-2xl rounded-xl shadow-lg mx-auto"
             />
           </div>
         </div>
