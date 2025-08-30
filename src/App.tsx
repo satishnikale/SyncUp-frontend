@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { LandingPage } from './pages/LandingPage';
 import { Login } from './pages/LoginPage';
-import { Register } from './pages/Register';
+import Register from './pages/Register';
 import { Guest } from './pages/GuestPage';
 import { NotFound } from './pages/NotFound';
 
