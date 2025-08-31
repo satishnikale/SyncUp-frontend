@@ -21,7 +21,7 @@ const Feature = ({ icon, title, desc }: FeatureProps) => (
   </div>
 );
 
-export const WhyChooseClearLink = () => {
+export const WhyChooseSyncUp = () => {
   const features = [
     {
       icon: <VideoIcon />,
@@ -36,7 +36,7 @@ export const WhyChooseClearLink = () => {
     {
       icon: <CalenderIcon />,
       title: "Scheduling made easy",
-      desc: "Streamline your agenda with ClearLink's intuitive scheduling. Set up meetings, send invitations, and receive reminders in one place."
+      desc: "Streamline your agenda with SyncUp's intuitive scheduling. Set up meetings, send invitations, and receive reminders in one place."
     },
     {
       icon: <SecurityIcon />,
@@ -53,12 +53,12 @@ export const WhyChooseClearLink = () => {
           {/* Features List */}
           <div className="flex flex-col gap-12">
             <div className="max-w-2xl my-10">
-              <p className="text-blue-600 font-semibold text-sm sm:text-base">The ClearLink Advantage</p>
+              <p className="text-blue-600 font-semibold text-sm sm:text-base">The SyncUp Advantage</p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-gray-900">
-                Why choose ClearLink?
+                Why choose SyncUp?
               </h2>
               <p className="text-gray-600 mt-4 text-sm sm:text-base md:text-lg">
-                In a world where connection is everything, ClearLink takes the lead.
+                In a world where connection is everything, SyncUp takes the lead.
                 Our cutting-edge video conferencing app offers:
               </p>
             </div>

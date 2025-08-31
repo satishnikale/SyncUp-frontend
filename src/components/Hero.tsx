@@ -1,5 +1,6 @@
 import { MainContent } from "./MainContent";
 import heroImage from "../assets/vdo-img.png";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
     return (
@@ -12,14 +13,14 @@ export const Hero = () => {
                         Uniting the world, <br className="hidden sm:block" /> one video call at a time
                     </h1>
                     <p className="text-darkGray text-sm sm:text-base md:text-lg leading-relaxed">
-                        Experience the future of communication with ClearLink — <br className="hidden sm:block" />
+                        Experience the future of communication with SyncUp — <br className="hidden sm:block" />
                         where crystal-clear video conferencing meets <br className="hidden sm:block" />
                         unparalleled simplicity.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+                        <Link to={"/register"} className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
                             Start your free trial
-                        </button>
+                        </Link>
                         <button className="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg shadow hover:bg-blue-50 transition">
                             Discover AI Assistant
                         </button>

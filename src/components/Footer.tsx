@@ -5,6 +5,7 @@ import {
     FaInstagram
 } from "react-icons/fa";
 import { MainContent } from "./MainContent";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -82,18 +83,18 @@ export const Footer = () => {
 
 
                     <div className="flex flex-col sm:flex-row items-center gap-4">
-                        <a
-                            href="#"
+                        <Link
+                            to={"#"}
                             className="w-36 h-11 bg-blue-700 rounded-xl flex items-center justify-center text-white text-sm font-medium hover:opacity-90 transition"
                         >
                             App Store
-                        </a>
-                        <a
-                            href="#"
+                        </Link>
+                        <Link
+                            to={"#"}
                             className="w-36 h-11 bg-blue-700 rounded-xl flex items-center justify-center text-white text-sm font-medium hover:opacity-90 transition"
                         >
                             Google Play
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

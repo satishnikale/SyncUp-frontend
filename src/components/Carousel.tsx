@@ -1,21 +1,21 @@
 import { MainContent } from "./MainContent";
 import review_2 from "../assets/friends-family-img.jpg";
 import myImage from "../assets/satish-img.jpg";
-import { useState } from "react";
+// import { useState } from "react";
 import { LeftArrow } from "../icons/LeftArrow";
 import { RightArrow } from "../icons/RightArrow";
 
 export const Carousel = () => {
     const slides = [review_2];
-    const [current, setCurrent] = useState(0);
+    // const [current, setCurrent] = useState(0);
 
-    const prevSlide = () => {
-        setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    };
+    // const prevSlide = () => {
+    //     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    // };
 
-    const nextSlide = () => {
-        setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    };
+    // const nextSlide = () => {
+    //     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    // };
 
     return (
         <MainContent>
@@ -57,13 +57,13 @@ export const Carousel = () => {
                 {/* Buttons */}
                 <div className="flex justify-center items-center gap-6 sm:gap-10 md:gap-12 my-6">
                     <button
-                        onClick={prevSlide}
+                        // onClick={prevSlide}
                         className="text-blue-600 rounded-full p-2 border border-gray-300 hover:bg-blue-50 transition"
                     >
                         <LeftArrow />
                     </button>
                     <button
-                        onClick={nextSlide}
+                        // onClick={nextSlide}
                         className="text-blue-600 rounded-full p-2 border border-gray-300 hover:bg-blue-50 transition"
                     >
                         <RightArrow />

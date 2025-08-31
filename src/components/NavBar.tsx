@@ -64,9 +64,30 @@ export const Navbar = () => {
 
                             {/* Menu Items */}
                             <ul className="flex flex-col gap-6 text-lg font-medium text-center">
-                                <li className="cursor-pointer hover:text-blue-600 transition">Join as Guest</li>
-                                <li className="cursor-pointer hover:text-blue-600 transition">Register</li>
-                                <li className="cursor-pointer hover:text-blue-600 transition">Login</li>
+                                <li onClick={() => setIsOpen(false)}>
+                                    <Link
+                                        to="/guest"
+                                        className="flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 transition"
+                                    >
+                                        Join as Guest
+                                    </Link>
+                                </li>
+                                <li onClick={() => setIsOpen(false)}>
+                                    <Link
+                                        to="/register"
+                                        className="flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 transition"
+                                    >
+                                        Register
+                                    </Link>
+                                </li>
+                                <li onClick={() => setIsOpen(false)}>
+                                    <Link
+                                        to="/login"
+                                        className="flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 transition"
+                                    >
+                                        Login
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

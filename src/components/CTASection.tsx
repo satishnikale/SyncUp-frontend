@@ -1,5 +1,6 @@
 import { CheckCircle } from "../icons/CheckCirlce";
 import videoCall from "../assets/feature-img.png";
+import { Link } from "react-router-dom";
 
 
 const features = [
@@ -33,9 +34,9 @@ export const CTASection = () => {
                         <button className="rounded-lg border border-gray-300 text-gray-900 px-6 py-2 text-base font-medium hover:bg-gray-100 transition">
                             Talk to sales
                         </button>
-                        <button className="rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2 text-base font-medium text-white transition">
+                        <Link to={"/register"} className="rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2 text-base font-medium text-white transition">
                             Start your free trial
-                        </button>
+                        </Link>
                     </div>
                 </div>
 

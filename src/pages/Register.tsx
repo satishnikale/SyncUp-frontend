@@ -1,7 +1,10 @@
 import { useForm } from "react-hook-form";
+import axios from "axios"
 import { MainContent } from "../components/MainContent";
 import registerImage from "../assets/register-img.png";
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
+import { useState } from "react";
 
 type RegisterFormData = {
     name: string;
@@ -11,6 +14,8 @@ type RegisterFormData = {
 };
 
 export default function Register() {
+    const { handleRegister } = useAuth();
+    const [error, setError] = useState();
     const {
         register,
         handleSubmit,
@@ -19,11 +24,18 @@ export default function Register() {
         formState: { errors },
     } = useForm<RegisterFormData>();
 
-    const onSubmit = (data: RegisterFormData) => {
-        console.log("Register Data:", data);
-
-        // After successful registration
-        reset();
+    const onSubmit = async (data: RegisterFormData) => {
+        try {
+            console.log("Register Data:", data);
+            await handleRegister(data.name, data.email, data.password);
+            // After successful registration
+            reset();
+        } catch (err) {
+            if (axios.isAxiosError(err)) {
+                // TS now knows it's an AxiosError
+                setError(err.response?.data?.message || "Something went wrong");
+            }
+        }
     };
 
     // Watch password for confirmPassword validation
@@ -160,6 +172,13 @@ export default function Register() {
                                             {errors.confirmPassword.message}
                                         </p>
                                     )}
+                                    {
+                                        error && (
+                                            <span className="mt-1 text-xs text-red-500">
+                                                {error}
+                                            </span>
+                                        )
+                                    }
                                 </div>
 
                                 {/* Register Button */}

@@ -2,6 +2,10 @@ import { useForm } from "react-hook-form";
 import { MainContent } from "../components/MainContent";
 import { Link } from "react-router-dom";
 import loginImage from "../assets/login-img.png";
+import { useAuth } from "../contexts/authContext";
+import { useState } from "react";
+import axios from "axios";
+
 
 type LoginFormInputs = {
     username: string;
@@ -9,6 +13,9 @@ type LoginFormInputs = {
 };
 
 export const Login = () => {
+    const { handleLogin } = useAuth();
+    const [error, setError] = useState();
+
     const {
         register,
         handleSubmit,
@@ -16,11 +23,19 @@ export const Login = () => {
         formState: { errors },
     } = useForm<LoginFormInputs>();
 
-    const onSubmit = (data: LoginFormInputs) => {
-        console.log("Login Data:", data);
-        reset();
+    const onSubmit = async (data: LoginFormInputs) => {
+        try {
+            console.log("Login Data:", data);
+            await handleLogin(data.username, data.password);
+            reset();
+        } catch (err) {
+            if (axios.isAxiosError(err)) {
+                // TS now knows it's an AxiosError
+                setError(err.response?.data?.message || "Something went wrong");
+            }
+            reset();
+        }
     };
-
     return (
         <MainContent>
             <div className="min-h-screen flex items-center justify-center bg-gray-50 font-inter p-6">
@@ -73,6 +88,14 @@ export const Login = () => {
                                         }`}
                                     placeholder="Enter your password"
                                 />
+
+                                {
+                                    error && (
+                                        <span className="mt-1 ml-1 text-xs text-red-500">
+                                            {error}
+                                        </span>
+                                    )
+                                }
 
                                 {/* Submit Button */}
                                 <button
