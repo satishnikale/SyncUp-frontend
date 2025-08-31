@@ -38,7 +38,7 @@ export const Login = () => {
     };
     return (
         <MainContent>
-            <div className="min-h-screen flex items-center justify-center bg-gray-50 font-inter p-6">
+            <div className="min-h-screen flex items-center justify-center font-inter p-6">
                 {/* Card Container */}
                 <div className="flex flex-col lg:flex-row bg-white shadow-xl rounded-2xl overflow-hidden w-full max-w-5xl">
 
