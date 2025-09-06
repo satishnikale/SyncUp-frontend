@@ -10,7 +10,7 @@ export const Navbar = () => {
                 <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
 
                     {/* Logo */}
-                    <div className="text-lg font-semibold">SyncUp</div>
+                    <Link to={"/"} className="text-lg font-semibold">SyncUp</Link>
 
                     {/* Desktop Menu */}
                     <ul className="hidden md:flex gap-6 text-sm font-medium">
