@@ -5,6 +5,7 @@ import registerImage from "../assets/register-img.png";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/authContext";
 import { useState } from "react";
+import { Navbar } from "../components/NavBar";
 
 type RegisterFormData = {
     name: string;
@@ -43,6 +44,7 @@ export default function Register() {
 
     return (
         <MainContent>
+            <Navbar />
             <div className="flex items-center justify-center min-h-screen p-4">
                 {/* Main Card */}
                 <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-xl overflow-hidden max-w-5xl w-full">

@@ -6,7 +6,9 @@ import Register from './pages/Register';
 import { JoinAsGuest } from './pages/GuestPage';
 import { NotFound } from './pages/NotFound';
 import { AuthProvider } from './contexts/authContext';
-import { Navbar } from './components/NavBar';
+import { VideoMeet } from './pages/VideoMeet';
+import Home from './pages/Home';
+import History from './pages/History';
 
 function App() {
 
@@ -15,12 +17,14 @@ function App() {
       <BrowserRouter>
 
         <AuthProvider>
-            <Navbar />
           <Routes>
             <Route path='/' element={<LandingPage />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/guest' element={<JoinAsGuest />} />
+            <Route path='/video-meet/:url' element={<VideoMeet />} />
+            <Route path='/home' element={ <Home /> } />
+            <Route path='/history'  element={ <History/> } />
             <Route path='*' element={<NotFound />} />
           </Routes>
 

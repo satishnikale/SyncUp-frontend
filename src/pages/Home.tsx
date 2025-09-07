@@ -13,7 +13,6 @@ function Home() {
 
     let handleJoinVideoCall = async () => {
         const username = localStorage.getItem("username");
-        alert(username);
         if (!username) return;
         await addToUserHistory(username, meetingCode);
         navigate(`/video-meet/${meetingCode}`);

@@ -9,3 +9,7 @@ body {
   background-size: 48px 48px; /* grid spacing */
   background-repeat: repeat;
 }
+
+.video-css {
+  background-color: black;
+}

@@ -2,6 +2,7 @@ import { MainContent } from "../components/MainContent";
 import joinGuest from "../assets/join-guest-img.png";
 
 import { useForm } from "react-hook-form";
+import { Navbar } from "../components/NavBar";
 
 export const JoinAsGuest = () => {
     const {
@@ -19,6 +20,7 @@ export const JoinAsGuest = () => {
 
     return (
         <MainContent>
+            <Navbar />
             <div className="min-h-screen flex items-center justify-center font-inter px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 bg-white shadow-xl rounded-2xl overflow-hidden max-w-5xl w-full">
 

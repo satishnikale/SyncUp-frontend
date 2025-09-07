@@ -5,6 +5,7 @@ import loginImage from "../assets/login-img.png";
 import { useAuth } from "../contexts/authContext";
 import { useState } from "react";
 import axios from "axios";
+import { Navbar } from "../components/NavBar";
 
 
 type LoginFormInputs = {
@@ -38,6 +39,7 @@ export const Login = () => {
     };
     return (
         <MainContent>
+            <Navbar />
             <div className="min-h-screen flex items-center justify-center font-inter p-6">
                 {/* Card Container */}
                 <div className="flex flex-col lg:flex-row bg-white shadow-xl rounded-2xl overflow-hidden w-full max-w-5xl">

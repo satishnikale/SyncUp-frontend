@@ -5,7 +5,7 @@ import { Home } from 'lucide-react';
 
 interface Meeting {
     meetingCode: string;
-    date: string;
+    Date: Date;
     duration?: number; // Optional property
     // Add other properties that might exist in your meeting objects
 }
@@ -19,8 +19,7 @@ export default function History() {
         const fetchHistory = async () => {
             try {
                 const username = localStorage.getItem("username");
-                alert(username);
-                if(!username) return;
+                if (!username) return;
                 const history = await getHistoryOfUser(username);
                 setMeetings(history);
             } catch {
@@ -32,13 +31,21 @@ export default function History() {
         fetchHistory();
     }, [getHistoryOfUser]);
 
-    const formatDate = (dateString: any) => {
-        const date = new Date(dateString);
+    const formatDate = (input: any) => {
+        if (!input) return "—"; // or "Invalid Date"
+
+        const date = input instanceof Date ? input : new Date(input);
+
+        if (isNaN(date.getTime())) return "Invalid Date";
+
         const day = date.getDate().toString().padStart(2, "0");
         const month = (date.getMonth() + 1).toString().padStart(2, "0");
         const year = date.getFullYear();
         return `${day}/${month}/${year}`;
     };
+
+
+
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-inter p-4 md:p-6 font-inter">
@@ -81,7 +88,7 @@ export default function History() {
                                         Date
                                     </p>
                                     <p className="text-md text-gray-700">
-                                        {formatDate(e.date)}
+                                        {formatDate(e.Date)}
                                     </p>
                                 </div>
 
